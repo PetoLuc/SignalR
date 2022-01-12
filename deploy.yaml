@@ -1,0 +1,45 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: SignalIRAppDeploy
+  labels:
+    app: SignalR
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: SignalIRAppDeploy
+  template:
+    metadata:
+      labels:
+        app: SignalR
+        service: SignalIRAppDeploy
+    spec:
+      containers: 
+        - name: SignalIRAppDeploy
+          image: plcontainerregistry.azurecr.io/petoluc/SignalIRAppDeploy:latest          
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80   
+            - name: WebApiBaseAddress
+              value: http://SignalR
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: SignalIRAppDeploy
+  labels:
+    app: SignalR
+    service: SignalIRAppDeploy
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    service: SignalIRAppDeploy
