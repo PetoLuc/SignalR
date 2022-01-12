@@ -35,6 +35,6 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-        $(TAG)
-        $(IS_LATEST)
+        tags: |        
+          latest
+          $(build.number)
