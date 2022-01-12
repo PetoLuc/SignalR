@@ -1,23 +1,20 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: signalrappdeploy
-  labels:
-    app: signalr
+  name: signalrapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: signalrappdeploy
+      service: signalrapp
   template:
     metadata:
       labels:
-        app: signalr
-        service: signalrappdeploy
+        app: signalrapp
     spec:
       containers: 
-        - name: signalrappdeploy
-          image: plcontainerregistry.azurecr.io/petolucsignalr:latest       
+        - name: signalrapp
+          image: plcontainerregistry.azurecr.io/petolucsignalr:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -31,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: signalrappdeploy
+  name: signalrapp
   labels:
-    app: signalr
-    service: signalrappdeploy
+    app: signalrapp
+    service: signalrapp
 spec:
   type: LoadBalancer
   ports:
@@ -42,4 +39,4 @@ spec:
       targetPort: 80
       protocol: TCP
   selector:
-    service: signalrappdeploy
+    service: signalrapp
