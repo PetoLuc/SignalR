@@ -37,6 +37,6 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
             latest
-            $(Build.BuildId)
+            $(Build.BuildNumber)
 
           
