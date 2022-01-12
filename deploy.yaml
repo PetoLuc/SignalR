@@ -2,6 +2,8 @@
 kind: Deployment
 metadata:
   name: signalrapp
+  labels:
+    app: signalrapp
 spec:
   replicas: 1
   selector:
@@ -11,6 +13,7 @@ spec:
     metadata:
       labels:
         app: signalrapp
+        service: signalrapp
     spec:
       containers: 
         - name: signalrapp
