@@ -12,6 +12,7 @@ namespace SignalR.Pages
             _logger = logger;
         }
 
+        public string serverName => Environment.MachineName;
         public void OnGet()
         {
 
