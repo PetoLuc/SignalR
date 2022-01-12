@@ -17,7 +17,7 @@ spec:
     spec:
       containers: 
         - name: SignalIRAppDeploy
-          image: plcontainerregistry.azurecr.io/petoluc/SignalIRAppDeploy:latest          
+          image: plcontainerregistry.azurecr.io/petolucsignalr:latest       
           imagePullPolicy: Always
           ports:
             - containerPort: 80
