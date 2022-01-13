@@ -17,7 +17,7 @@ spec:
     spec:      
       containers:
         - name: appcontainer
-          image: plcontainerregistry.azurecr.io/petoluc/signalr:latest
+          image: plcontainerregistry.azurecr.io/petolucsignalr:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
