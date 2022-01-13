@@ -1,5 +1,5 @@
 ﻿apiVersion: apps/v1
-kind: Deployment
+kind: deployment
 metadata:
   name: webapp
   labels:
@@ -15,9 +15,11 @@ spec:
         app: signalr-test
         service: webapp
     spec:
+      #terminationGracePeriodSeconds: 30
       containers:
-        - name: webapp
-          image: plcontainerregistry.azurecr.io/petolucsignalr:latest          
+        - name: appcontainer
+          image: plcontainerregistry.azurecr.io/petolucsignalr:latest
+          imagePullPolicy: "Always"
           ports:
             - containerPort: 80
               protocol: TCP
