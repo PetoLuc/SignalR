@@ -15,7 +15,7 @@ spec:
         app: signalr-test
         service: webapp
     spec:
-      #terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 30
       containers:
         - name: appcontainer
           image: plcontainerregistry.azurecr.io/petolucsignalr:latest
