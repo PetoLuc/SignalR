@@ -39,6 +39,6 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: |
           $(Build.BuildNumber)
-          latest
+          #latest
 
           
