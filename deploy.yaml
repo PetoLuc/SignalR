@@ -14,12 +14,11 @@ spec:
       labels:
         app: signalr-test
         service: webapp
-    spec:
-      terminationGracePeriodSeconds: 30
+    spec:      
       containers:
         - name: appcontainer
-          image: plcontainerregistry.azurecr.io/petolucsignalr:latest
-          imagePullPolicy: "Always"
+          image: plcontainerregistry.azurecr.io/petoluc/signalr:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
               protocol: TCP
