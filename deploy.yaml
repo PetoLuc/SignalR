@@ -17,8 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: plcontainerregistry.azurecr.io/petolucsignalr:latest
-          imagePullPolicy: Always
+          image: plcontainerregistry.azurecr.io/petolucsignalr:latest          
           ports:
             - containerPort: 80
               protocol: TCP
