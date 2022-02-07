@@ -1,4 +1,4 @@
-
+//https://stackoverflow.com/questions/40272341/how-to-pass-parameters-to-a-net-core-project-with-dockerfile
 using SignalR.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);

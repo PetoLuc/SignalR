@@ -5,3 +5,6 @@ https://github.com/kubernetes/dashboard/blob/v2.0.0/docs/user/access-control/REA
 AZureDevOps.pdf  page 385+
 https://docs.microsoft.com/en-us/learn/modules/intro-to-kubernetes/1-introduction
 https://vsupalov.com/docker-latest-tag/
+
+docker app workflow:
+https://docs.microsoft.com/en-us/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow

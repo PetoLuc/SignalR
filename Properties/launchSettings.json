@@ -26,8 +26,12 @@
     },
     "Docker": {
       "commandName": "Docker",
+      "commandLineArgs": "externalConfig.json",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "var1": "1234"
+      },
       "publishAllPorts": true,
       "useSSL": true
     }
